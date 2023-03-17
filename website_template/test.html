@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Learning profiles</title>
+      <title>Protect</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -32,7 +32,7 @@
    </head>
    <body>
       <!--header section start -->
-      <div class="header_section">
+      <div class="header_section header_bg">
          <div class="container-fluid">
                <div class="main">
                   <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
@@ -62,99 +62,85 @@
                   </div>
                </div>
             </div>
-     <!-- banner section start -->
-<div class="banner_section layout_padding">
-   <div class="container">
-      <div id="my_slider" class="carousel slide" data-ride="carousel">
-         <div class="carousel-inner">
-            <div class="carousel-item active">
-               <div class="row">
-                  <div class="col-md-6">
-                     <div class="container">
-                        <h1 class="banner_taital">Maximizing Learning Potential</h1>
-                        <p class="banner_text">Understanding the unique learning style of each individual help educators create effective learning environments that support their academic success.</p>
-                        <div class="more_bt"><a href="science.html">Read More</a></div>
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="banner_img"><img src="images/banner_img2.png"></div>
-                  </div>
+            <!-- banner section start -->
+            <div class="container">
+               <div class="about_taital_main">
+                  <h2 class="about_tag">This is here you take your test</h2>
                </div>
             </div>
-            <div class="carousel-item">
-               <div class="row">
-                  <div class="col-md-6">
-                     <div class="container">
-                        <h1 class="banner_taital">Identifying Learning Styles</h1>
-                        <p class="banner_text">By recognizing individual learning styles and preferences, educators can tailor their teaching methods and materials to better engage and support their students.</p>
-                        <div class="more_bt"><a href="science.html">Read More</a></div>
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="banner_img"><img src="images/banner_img1.png"></div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-         <i class="fa fa-angle-left"></i>
-         </a>
-         <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-         <i class="fa fa-angle-right"></i>
-         </a>
-      </div>
-   </div>            
-</div>
-<!-- banner section end -->
+         <!-- banner section end -->
       </div>
       <!-- header section end -->
-      <!-- protect section start -->
+      <!-- Survey section start -->
       <div class="protect_section layout_padding">
          <div class="container">
-            <div class="row">
-               <div class="col-sm-12">
-                 <h1 class="protect_taital">Understanding Different Learning Styles</h1>
-                 <p class="protect_text">Everyone learns in a different way. Some people prefer visual aids like diagrams and videos, while others learn best through listening and discussion. There are also those who learn best through hands-on experience and practice. Understanding your own learning style and the learning styles of others can help you tailor your approach to learning and teaching, and ultimately achieve better results.</p>
+           <div class="row">
+             <div class="col-sm-12">
+               <div style="text-align:center">
+               <h1 class="protect_taital">TEST SHOULD BE HERE</h1>
+               <div id="surveyContainer"></div>
+               <button id="surveyButton" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#0445AF;color:#fff;font-size:20px;border-radius:25px;padding:0 33px;font-weight:bold;height:50px;cursor:pointer;line-height:50px;text-align:center;margin:0;text-decoration:none;">Take Survey</button>
+               <style>
+                 .blur {
+                   filter: blur(5px);
+                 }
+                 #surveyIframeContainer {
+                   position: fixed;
+                   top: 50%;
+                   left: 50%;
+                   transform: translate(-50%, -50%);
+                   z-index: 9999;
+                   display: none;
+                 }
+                 #surveyIframe {
+                   border: none;
+                   width: 800px;
+                   height: 600px;
+                 }
+                 .blur-background {
+                   position: fixed;
+                   top: 0;
+                   left: 0;
+                   width: 100%;
+                   height: 100%;
+                   background-color: rgba(0, 0, 0, 0.5); /* adjust the opacity as needed */
+                   z-index: 9998; /* below the survey iframe container */
+                   display: none;
+                 }
+                 
+               </style>
+               <script src="https://unpkg.com/jquery"></script>
+               <script>
+                 $(document).ready(function() {
+                   $('#surveyButton').click(function() {
+                     var surveyUrl = 'https://forms.office.com/Pages/ResponsePage.aspx?id=Nh39Ycv-yke319DfA3ChmHLtSSlpeZlKorRJq4bjIpBUMlhIVTFaNFo0RDdYQ1RESDkxR01QV1dRSS4u&embed=true';
+                     $('.blur-background').fadeIn(); // show the blur background
+                     $('header').addClass('blur'); // apply blur only to header
+                     $('#surveyIframeContainer').fadeIn();
+                     $('#surveyIframe').attr('src', surveyUrl);
+                   });
+                   $('#surveyIframeCloseButton').click(function() {
+                     $('.blur-background').fadeOut(); // hide the blur background
+                     $('header').removeClass('blur'); // remove blur only from header
+                     $('#surveyIframe').attr('src', '');
+                     $('#surveyIframeContainer').fadeOut();
+                   });
+                 });
+               </script>
+               <div id="surveyIframeContainer">
+                 <button id="surveyIframeCloseButton">Close Survey</button>
+                 <iframe id="surveyIframe"></iframe>
                </div>
+               <p class="protect_text">Some text about the survey</p>
              </div>
-             <div class="protect_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-sm-12">
-                       <h1 class="protect_taital">The different ways of learning</h1>
-                     </div>
-                   </div>                          
-            <div class="protect_section_2 layout_padding">
-               <div class="row">
-                  <div class="col-md-6">
-                     <h1 class="hands_text"><a href="#">Visual: <br>Prefer visual aids</a></h1>
-                     <h1 class="hands_text_2"><a href="#">Auditory: <br>prefer listening</a></h1>
-                     <h1 class="hands_text"><a href="#">Kinesthetic:<br>prefer haptic</a></h1>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="image_2"><img src="images/info.png"></div>
-                  </div>
-               </div>
-            </div>
+           </div>
          </div>
-      </div>
-      <!-- protect section end -->
-      <!-- about section start -->
-      <div class="about_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="about_img"><img src="images/test.png"></div>
-               </div>
-               <div class="col-md-6">
-                  <h1 class="about_taital">Do you want to figure out your learning profile?</span></h1>
-                  <div class="read_bt"><a href="test.html">Take the test</a></div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- about section end -->
-
+       </div>
+       
+       <div class="blur-background"></div> <!-- add this div at the end of the body -->
+       
+      <!-- survey section end -->
+   
       <!-- copyright section start -->
       <div class="copyright_section">
          <div class="container">
@@ -172,13 +158,13 @@
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/jquery-3.0.0.min.js"></script>
       <script src="js/plugin.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
       <!-- javascript --> 
       <script src="js/owl.carousel.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
          $(document).ready(function(){
          $(".fancybox").fancybox({
